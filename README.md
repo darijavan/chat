@@ -13,6 +13,7 @@ Chat application for same devices connected to same network
 # Server development side (API)
 
 *First, install all the dependencies by running (on the server folder)*
+<br>
 `npm install`
 
 - [ ] Add user account
