@@ -1,4 +1,4 @@
-## Chat
+## Chat (Work in progress)
 
 Chat application for same devices connected to same network
 
