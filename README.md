@@ -10,6 +10,13 @@ Chat application for same devices connected to same network
 - [x] Init server side service (ExpressJS/NodeJS)
 - [ ] Init desktop app (Electron)
 
+# Server development side (API)
 
-# Next step
-- [ ] Midev
+- [ ] Add user account
+- [ ] Add login handling
+
+# Mobile app development side (Flutter)
+- [ ] Create splash screeen
+- [ ] Create login screen
+- [ ] Create home screen
+- [ ] Add services to fetch data from the local server (API)
