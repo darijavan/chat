@@ -1,0 +1,14 @@
+{
+  "name": "chat-desktop",
+  "version": "0.1.0",
+  "description": "Chat application for devices connected to the same network",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Hajanirina Ridjvan RANDRIANANDRAINA <darijavan@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^7.1.9"
+  }
+}
