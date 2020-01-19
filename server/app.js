@@ -22,6 +22,8 @@ mongoose.connect(conf.mongodburi, {
   autoCreate: true,
 });
 
+require('./config/passport');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
