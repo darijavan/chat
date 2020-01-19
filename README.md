@@ -17,9 +17,9 @@ Chat application for same devices connected to same network
 <br>
 `npm install`
 
-- [ ] Add user account
-- [ ] Add login handling
-- [ ] Add database connection (Use mongo DB)
+- [x] Add user account
+- [x] Add login handling
+- [x] Add database connection (Use mongo DB)
 - [ ] Add user message notification service
 - [ ] Add message sending service
 
