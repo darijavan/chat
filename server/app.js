@@ -3,7 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 var mongoose = require('mongoose');
+var MongoStore = require('connect-mongo').MongoStore;
+var passport = require('passport');
 
 var conf = require('./constants/conf');
 
@@ -29,6 +32,22 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
+
+app.use(session({
+  secret: conf.sessionSecretKey,
+  resave: false,
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+  }),
+  cookie: {
+    maxAge: 60 * 60 * 1000
+  }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
