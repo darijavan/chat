@@ -14,10 +14,13 @@ Chat application for same devices connected to same network
 
 *First, install all the dependencies by running (on the server folder)*
 <br>
+<br>
 `npm install`
 
 - [ ] Add user account
 - [ ] Add login handling
+- [ ] Add database connection (Use mongo DB)
+- [ ] 
 
 # Mobile app development side (Flutter)
 - [ ] Create splash screeen
