@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:mobile/src/util/route.dart';
 import 'package:mobile/src/view/screen/home.dart';
-import 'package:mobile/src/view/screen/login.dart';
+import 'package:mobile/src/view/screen/signin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,13 +21,14 @@ class _SplashScreenState extends State<SplashScreen> {
 
       final bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
       if (!isLoggedIn)
-        targetScreen = LoginScreen();
+        targetScreen = SigninScreen();
       else
         targetScreen = HomeScreen();
       Timer(Duration(seconds: 2), () {
         RouteUtils.goTo(
           context: context,
           child: targetScreen,
+          replace: true,
         );
       });
     });
@@ -40,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
         color: Colors.white,
         child: Center(
           child: Image(
-            width: 120,
+            width: 100,
             image: AssetImage(
               "assets/images/logo.png",
             ),
