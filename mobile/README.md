@@ -1,6 +1,6 @@
-# mobile
+# Chat Mobile
 
-A new Flutter project.
+Mobile application for chat.
 
 ## Getting Started
 
