@@ -9,15 +9,13 @@ router.get('/', function (req, res, next) {
 
 router.post('/authenticate', function (req, res, next) {
   passport.authenticate('local.signin', function (err, user, info) {
-    if (err) {
-      return next(err);
-    }
-    if (!user) {
-      return next(info);
-    }
+    if (err) return next(err);
+    if (!user) return next(info);
+
     req.logIn(user, function (err) {
       if (err) return next(err);
-      res.send('tonga aaaa');
+
+      res.json(user);
     });
 
   })(req, res, next);
