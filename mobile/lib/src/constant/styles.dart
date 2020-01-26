@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ChatStyles {
-  ChatStyles._();
-
   static final TextStyle headerStyle = TextStyle(
     fontSize: 36,
     color: Colors.white,
