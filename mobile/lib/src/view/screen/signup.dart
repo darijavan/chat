@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/src/constant/styles.dart';
-import 'package:mobile/src/util/route.dart';
-import 'package:mobile/src/view/screen/signin.dart';
 import 'package:mobile/src/view/widget/buttons.dart';
 
 class SignupScreen extends StatefulWidget {
