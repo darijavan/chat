@@ -3,6 +3,8 @@ import 'package:mobile/src/constant/styles.dart';
 import 'package:mobile/src/util/route.dart';
 import 'package:mobile/src/view/screen/signup.dart';
 import 'package:mobile/src/view/widget/buttons.dart';
+import 'package:mobile/src/view/widget/custom_text_field.dart';
+import 'package:mobile/src/view/widget/toast.dart';
 
 class SigninScreen extends StatefulWidget {
   @override
@@ -45,21 +47,15 @@ class _SigninScreenState extends State<SigninScreen> {
                 SizedBox(
                   height: 60,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Username',
-                    hintStyle: ChatStyles.hintStyle,
-                  ),
+                CustomTextField(
+                  'Username',
                 ),
                 SizedBox(
                   height: 10.0,
                 ),
-                TextField(
+                CustomTextField(
+                  'Password',
                   obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: 'Password',
-                    hintStyle: ChatStyles.hintStyle,
-                  ),
                 ),
                 SizedBox(
                   height: 20.0,
@@ -79,7 +75,12 @@ class _SigninScreenState extends State<SigninScreen> {
                         color: Colors.white,
                         size: 30,
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Toast.show(
+                          context,
+                          'Sign in...',
+                        );
+                      },
                     ),
                   ],
                 ),
