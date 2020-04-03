@@ -22,6 +22,7 @@ mongoose.connect(conf.mongodburi, {
   autoCreate: true,
 });
 
+// load passport configurations
 require('./config/passport');
 
 // view engine setup
@@ -35,6 +36,7 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 
+// inialize session
 app.use(session({
   secret: conf.sessionSecretKey,
   resave: false,
@@ -44,10 +46,12 @@ app.use(session({
     autoRemove: 'native',
   }),
   cookie: {
-    maxAge: 60 * 60 * 1000
+    maxAge: 60 * 60 * 1000,
+    secure: true
   }
 }));
 
+// initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
 
