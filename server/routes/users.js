@@ -4,7 +4,9 @@ var passport = require('passport');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
+  res.send({
+    message: 'respond with a resource'
+  });
 });
 
 router.post('/authenticate', function (req, res, next) {
@@ -21,6 +23,11 @@ router.post('/authenticate', function (req, res, next) {
   })(req, res, next);
 }, function (err, req, res) {
   res.sendStatus(403);
+});
+
+router.get('/log', function (req, res, next) {
+  req.logOut();
+  res.redirect('/signin');
 });
 
 module.exports = router;
