@@ -1,4 +1,4 @@
-var OptimizedMap = require('../classes/Map');
+var OptimizedMap = require('../classes/map');
 
 /**
  * Initialize SocketIO server
@@ -10,7 +10,7 @@ function initSocket(io) {
   io.on('connection', function (socket) {
     currentConnections.set(socket, {});
 
-    socket.emit('user-connected', currentConnections.size);
+    io.emit('user-connected', currentConnections.size);
 
     socket.on('user-data', function (data) {
       currentConnections.set(socket, data);
