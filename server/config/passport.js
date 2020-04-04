@@ -2,7 +2,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var hash = require('../helpers/hash');
 
-var User = require('../models/user');
+var User = require('../models/user').User;
 
 passport.serializeUser(function (user, done) {
   done(null, user.id);

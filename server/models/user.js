@@ -9,7 +9,12 @@ var userSchema = new Schema({
   password: {
     type: String,
     required: true
+  },
+  role: {
+    type: String,
+    required: false
   }
 });
 
-module.exports = mongoose.model('User', userSchema);
+exports.userSchema = userSchema;
+exports.User = mongoose.model('User', userSchema);
