@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var hash = require('../helpers/hash');
 
 var conf = require('../constants/conf');
-var User = require('../models/user');
+var User = require('../models/user').User;
 
 mongoose.connect(conf.mongodburi, {
   useNewUrlParser: true,
@@ -12,7 +12,8 @@ mongoose.connect(conf.mongodburi, {
 
 var danze = new User({
   username: 'danze',
-  password: hash.hash('danze')
+  password: hash.hash('danze'),
+  role: 'admin'
 });
 
 danze.save(function (err) {
