@@ -8,4 +8,4 @@ module.exports = {
   hash: function (data) {
     return bcrypt.hashSync(data, bcrypt.genSaltSync(5), null);
   }
-}
+};
